@@ -1,8 +1,4 @@
 *{border: 0; margin: 0; box-sizing: border-box;}
-body{
-    width: 100vh;
-    height: 100vh;
-}
 .multi_table{
     position: relative;
 
@@ -10,7 +6,5 @@ body{
 table, tr, th{
     border:1px solid #aaa9a9;
     border-collapse: collapse;
-    width: 100vh;
     margin: 0 auto;
-    height: 300px;
 }
