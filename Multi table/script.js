@@ -14,11 +14,11 @@ for(let i = 1; i < 4; i++){
 
 let e_td = document.getElementsByTagName("td")
 
-for(i = 1; i < 10; i++){
+for(k = 1; k < 10; k++){
     for(j = 1; j < 10; j++){
         let temp = "";
-        temp += i + "X" + j + "=" + i*j + "\n";
-        e_td[i-1].append(temp)
+        temp += k + "X" + j + "=" + k*j + "\n";
+        e_td[k-1].append(temp);
     }
 }
 

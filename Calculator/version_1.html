@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="calc">
+    <input class="calc_result" type="text" value=""></input>
+    <input class="calc_symbols" type="text" value=""></input>
+    <input class="calc_result" type="text" value=""></input>
+    <div class="calc_body">
+        <div class="operators">
+            <button class="symbols" onclick="add('+')">+</button>
+            <button class="symbols" onclick="add('-')">-</button>
+            <button class="symbols" onclick="add('*')">&times;</button>
+            <button class="symbols" onclick="add('/')">&divide;</button>
+        </div>
+        <div class="left_calc">
+            <div class="numbers">
+                <button onclick="add(7)">7</button>
+                <button onclick="add(8)">8</button>
+                <button onclick="add(9)">9</button>
+            </div>
+            <div class="numbers">
+                <button onclick="add(4)">4</button>
+                <button onclick="add(5)">5</button>
+                <button onclick="add(6)">6</button>
+            </div>
+            <div class="numbers">
+                <button onclick="add(1)">1</button>
+                <button onclick="add(2)">2</button>
+                <button onclick="add(3)">3</button>
+            </div>
+            <div class="numbers">
+                <button onclick="add(0)">0</button>
+                <button>C</button>
+            </div>
+        </div>
+        <div class="right_calc">
+            <div class="equl" onclick="calc_operate()">=</div>
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>    
+</body>
+</html>
