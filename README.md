@@ -6,5 +6,5 @@ FE로 Jump up 하기 위해 javascript로 PM님에게 채찍질 당하는 중인
 
 1. 구구단 구현
 2. 계산기 구현
-  1. Vanilla JS 컨펌 완료!
-  2. jQuery 진행중
+   1. Vanilla JS 컨펌 완료!
+   2. jQuery 진행중
