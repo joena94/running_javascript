@@ -6,6 +6,7 @@ let display_1 = document.getElementsByClassName("calc_result")[0]; // 결과값_
 let display_2 = document.getElementsByClassName("calc_symbols")[0]; // 연산기호
 let display_3 = document.getElementsByClassName("calc_result")[1]; // 결과값_2
 
+
 // 숫자를 누르면 clac_result에 나타내기
 function add(char){
     if(display_2.value === ""){
@@ -32,7 +33,7 @@ function calc_operate(){
     let result_num1 = Number(display_1.value);
     let result_symbol = display_2.value;
     let result_num3 = Number(display_3.value);
-    
+
     if(result_symbol === "+"){
         let answer = result_num1 + result_num3;
         final.value = answer;
@@ -56,8 +57,16 @@ function reset(){
     final.value = "";
 }
 
-// eval is evil이라고 해서 보안에 취약함.
-// new Function() 이라는 애를 사용해보자.
-// 기본 문법
-// var sum = new Function('a', 'b', 'return a + b');
-// console.log(sum(1, 2)); // 3
+/*
+소중한 대장님 코드
+
+$(function(){
+    $(".left_calc").find("button").each(function(){
+        let $this = $(this);
+        $this.click(function(){
+            let buttonValue = Number($this.text());
+            add(buttonValue);
+        });
+    });
+});
+*/
