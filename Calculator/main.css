@@ -8,7 +8,17 @@
     padding: 1.5rem;
     font-size: 10px;
 }
-#calc #calc_result{
+#calc input:first-child{
+    width: 100%;
+    border: 1px solid #e0e0e7;
+    border-radius: 1px;
+    height: 60px;
+    text-align: right;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+}
+#calc input{
     width: 32.8%;
     border: 1px solid #e0e0e7;
     border-radius: 1px;
@@ -31,9 +41,7 @@
     font-size: 1.6rem;
     color: white;
 }
-#calc .calc_body .operators button:last-child{
-    margin-right: none;
-}
+
 #calc .calc_body .left_calc{
     display: inline-block;
 }
@@ -45,6 +53,9 @@
     font-size: 1.6rem;
     color:#333;
     border: none;
+}
+#calc .calc_body .left_calc .numbers:last-child button:last-child{
+    width: calc(100% - 114px);
 }
 #calc .calc_body .right_calc{
     display: inline-block;

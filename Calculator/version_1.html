@@ -10,15 +10,16 @@
 <body>
 
 <div id="calc">
+    <input id="final" type="number" value=""></input>
     <input class="calc_result" type="text" value=""></input>
     <input class="calc_symbols" type="text" value=""></input>
     <input class="calc_result" type="text" value=""></input>
     <div class="calc_body">
         <div class="operators">
-            <button class="symbols" onclick="add('+')">+</button>
-            <button class="symbols" onclick="add('-')">-</button>
-            <button class="symbols" onclick="add('*')">&times;</button>
-            <button class="symbols" onclick="add('/')">&divide;</button>
+            <button class="symbols" onclick="calc_symbols('+')">+</button>
+            <button class="symbols" onclick="calc_symbols('-')">-</button>
+            <button class="symbols" onclick="calc_symbols('X')">&times;</button>
+            <button class="symbols" onclick="calc_symbols('÷')">&divide;</button>
         </div>
         <div class="left_calc">
             <div class="numbers">
@@ -38,7 +39,7 @@
             </div>
             <div class="numbers">
                 <button onclick="add(0)">0</button>
-                <button>C</button>
+                <button onclick="reset()">C</button>
             </div>
         </div>
         <div class="right_calc">
