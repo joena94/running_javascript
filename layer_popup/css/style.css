@@ -1,0 +1,207 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+/*
+.mask{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(13, 2, 2, 0.75); 
+    background-size: 1px 1px;
+    z-index: 9999;
+    cursor: pointer;
+}
+/* 꼼꼼하게 쓴다면 이렇게 이벤트 커서 표시 넣기 */
+
+/* -- 레이어팝업 -- */
+.mask{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(13, 2, 2, 0.5);
+    z-index: 9999;
+    cursor: pointer; /* 꼼꼼하게 쓴다면 이렇게 이벤트 커서 표시 넣기 */
+}
+
+.layer{
+    width: 80%;
+    min-width: 514px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #fff;
+    cursor: auto;
+}
+
+.layerHead{
+    width: 100%;
+    height: 100px;
+    padding: 2.4rem 2rem;
+    background-color: #004A8F;
+    box-sizing: border-box;
+}
+.layerHead > h3{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    text-align: left;
+    float: left;
+    
+}
+.closeBtn{
+    border: 2px solid white;
+    width: 25px;
+    height: 25px;
+    float: right;
+    color: white;
+    font-weight: 600;
+    margin: 0;
+    cursor: pointer;
+}
+
+.layerBody{
+    width: 100%;
+    height: calc(100% - 100px);
+    box-sizing: border-box;
+    padding: 5%;
+}
+.layerBody > p{
+    text-align: left;
+}
+
+
+/* -- 달력 -- */
+
+.calendar{
+    width: 80%;
+    height: 500px;
+    border-radius: 5px;
+    background-color: #353C4F;
+    overflow: hidden;
+}
+.calendar > .calendar_wrap{
+    float: left;
+    width: 60%;
+    height: calc(100% - 14px);
+    margin: 7px 0px 7px 7px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.calendar > .calendar_content{
+    float: right;
+    width: calc(40% - 7px);
+}
+.calendar > .calendar_wrap > .calendar_top{
+    text-align: center;
+    padding: 1rem 0;
+}
+.calendar > .calendar_wrap > .calendar_top a{
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-decoration: none;
+}
+.calendar > .calendar_wrap > .calendar_top i{
+    color: #353C4F;
+    font-size: 24px;
+}
+.calendar > .calendar_wrap > .calendar_top span{
+    font-size: 1rem;
+}
+
+/* 요일 */
+.calendar_body .day_week ul{
+    padding: 0;
+    overflow: hidden;
+}
+.calendar_body .day_week li{
+    list-style: none;
+    float: left;
+    width: calc(100% / 7);
+    font-size: 1rem;
+    text-align:center;    
+}
+
+/* 날짜 */
+.calendar_body > .date ul{
+    padding: 0;
+    overflow: hidden;
+}
+.calendar_body > .date ul a{
+    color: #B289DF;
+    text-decoration: none;
+}
+.calendar_body > .date li{
+    list-style: none;
+    float: left;
+    width: calc(100% / 7);
+    padding: 1.5rem;
+    border: 1px solid #efefef;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align:center; 
+    box-sizing: border-box;
+    
+}
+
+/* 컨텐츠 */
+.calendar_content > .cal_content_title{
+    position: relative;
+    padding: 2.5rem 2.3rem 1.6rem 2.3rem;
+    overflow: hidden;
+}
+.calendar_content > .cal_content_title .select_day_name{
+    width: 50%;
+    color: #efefef;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.calendar_content > .cal_content_title .select_date{
+    position: absolute;
+    right: 2.3rem;
+    padding: 0.5rem 0;
+    color: #999999;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.cal_content_wrap > .cal_content_box ul{
+    padding-left: 0;
+    position: relative;
+}
+.cal_content_wrap > .cal_content_box li{
+    list-style: none;
+    padding: 1rem;
+    color: #efefef;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.cal_content_wrap > .cal_content_box span.time{
+    padding-left: 1.3rem;
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+.cal_content_wrap > .cal_content_box span.dot{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    background-color: #B289DF;
+    border-radius: 50%;
+}
+
+.on_day{
+    background: linear-gradient(to right, rgba(178,137,223,0.5), rgba(178,137,223,0));
+}

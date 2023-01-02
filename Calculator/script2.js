@@ -1,4 +1,8 @@
-$(function(){
+$(function(){ // document.ready 일때 바로 시작(시점)
+            // css와 달리 Merge 되는 개념임.
+                //시점 다름 
+                // 비 권고
+
     // input DOM
     let $calcWrap = $("<div/>").attr("id", "calc");
     let $finalNum = $("<input/>").attr({"id":"final", "type":"number"});
