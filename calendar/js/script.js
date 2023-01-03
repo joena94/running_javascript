@@ -35,16 +35,16 @@ $(function(){
     // 캘린더 상단부분 < > 이벤트
     // prev
     $prev_btn.click(function(){
-        $(".date ul").remove;
-        $date = new Date($date.getFullYear, $date.getMonth()-1, $date.getDate());
-        render_calendar();
+        $(".date ul").remove();
+        // $date = new Date($date.getFullYear, $date.getMonth()-1, $date.getDate());
+        // render_calendar();
     })
 
     // next
     $next_btn.click(function(){
-        $(".date ul").remove;
-        $date = new Date($date.getFullYear, $date.getMonth()+1, $date.getDate());
-        render_calendar();
+        $(".date ul").remove();
+        // $date = new Date($date.getFullYear, $date.getMonth()+1, $date.getDate());
+        // render_calendar();
     })
 
     // calendar body
