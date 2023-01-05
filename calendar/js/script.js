@@ -1,4 +1,4 @@
-$(function(){
+function calendar(){
     // 캘린더 info
     let $date = new Date();
     let $year = new Date().getFullYear();
@@ -149,5 +149,5 @@ $(function(){
 
     $calendar_wrap.append($calendar_top, $calendar_body);
     $calendar.append($calendar_wrap, $calendar_content);
-    $("body").append($calendar);
-});
+    // $("body").append($calendar);
+};

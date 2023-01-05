@@ -1,88 +1,6 @@
-body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 10px;
-    box-sizing: border-box;
-}
-/*
-.mask{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(13, 2, 2, 0.75); 
-    background-size: 1px 1px;
-    z-index: 9999;
-    cursor: pointer;
-}
-/* 꼼꼼하게 쓴다면 이렇게 이벤트 커서 표시 넣기 */
-
-/* -- 레이어팝업 -- */
-.mask{
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(13, 2, 2, 0.5);
-    z-index: 9999;
-    cursor: pointer; /* 꼼꼼하게 쓴다면 이렇게 이벤트 커서 표시 넣기 */
-}
-
-.layer{
-    min-width: 514px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    cursor: auto;
-}
-
-.layerHead{
-    width: 100%;
-    height: 100px;
-    padding: 2.4rem 2rem;
-    background-color: #004A8F;
-    box-sizing: border-box;
-}
-.layerHead > h3{
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    text-align: left;
-    float: left;
-    
-}
-.closeBtn{
-    border: 2px solid white;
-    width: 25px;
-    height: 25px;
-    float: right;
-    color: white;
-    font-weight: 600;
-    margin: 0;
-    cursor: pointer;
-}
-
-.layerBody{
-    width: 100%;
-    height: calc(100% - 100px);
-    box-sizing: border-box;
-    padding: 5%;
-}
-.layerBody > p{
-    text-align: left;
-}
-
-
 /* -- 달력 -- */
 
 .calendar{
-    width: 80%;
     height: 500px;
     border-radius: 5px;
     background-color: #353C4F;
@@ -145,6 +63,7 @@ body{
     list-style: none;
     float: left;
     width: calc(100% / 7);
+    height: 71px;
     padding: 1.5rem;
     border: 1px solid #efefef;
     color: rgb(112, 112, 112);
@@ -152,7 +71,10 @@ body{
     font-weight: bold;
     text-align:center; 
     box-sizing: border-box;
-    
+}
+li.empty_day{
+    background-color: #eeeeee;
+    border: 1px solid #efefef;
 }
 
 /* 컨텐츠 */
