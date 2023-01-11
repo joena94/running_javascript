@@ -49,7 +49,7 @@ function calendar(){
     let date = new Date();
     let year = new Date().getFullYear();
     let end_year = new Date().getFullYear()+1;
-    let month = new Date().getMonth();
+    let month = new Date().getMonth()+1;
 
     let string_month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 
@@ -74,21 +74,6 @@ function calendar(){
         $next_btn.append($("<i/>").addClass("ri-arrow-right-s-fill"))
     )
 
-    // 캘린더 상단부분 < > 이벤트
-    // prev
-    $prev_btn.click(function(){
-        $(".date ul").remove();
-        // $date = new Date($date.getFullYear, $date.getMonth()-1, $date.getDate());
-        // render_calendar();
-    })
-
-    // next
-    $next_btn.click(function(){
-        $(".date ul").remove();
-        // $date = new Date($date.getFullYear, $date.getMonth()+1, $date.getDate());
-        // render_calendar(2022, 02);
-    })
-
     // calendar body
     let $calendar_week = $("<div/>").addClass("day_week");
     let $calendar_date = $("<div/>").addClass("date");
@@ -109,8 +94,6 @@ function calendar(){
         let start_week = new Date(y, m-1, 1).getDay(); // 그 달의 시작 요일
         let last_day = new Date(y, m, 0).getDate(); //그 달의 마지막날
         let prev_last_day = new Date(y, m-1, 0).getDate(); //전달의 마지막 날
-        
-        console.log(start_week, last_day, prev_last_day);
 
         let li_count = start_week + last_day;
         let limit_loop = 35;
@@ -122,8 +105,6 @@ function calendar(){
         for(i = 0; i < limit_loop; i++){
             let _$day_li = $("<li/>")
             let nowNum = i-(start_week-1); // 이게 뭐지
-
-            console.log(nowNum)
 
             if(nowNum <= 0){
                 _$day_li.addClass("empty_day")
@@ -138,21 +119,48 @@ function calendar(){
         
         $calendar_date.append(_$day_ul);
     };
-
-    render_calendar(2023, 2);
+    render_calendar(year, month);
+    
 
     // 캘린더 상단부분 < > 이벤트
     // prev
     $prev_btn.click(function(){
         $(".month_day").remove();
-        date = new Date(date.getFullYear, date.getMonth()-1, date.getDate());
+
+        let select_year = year;
+        let select_month = month - 1;
+
+        if(select_month < 1){
+            select_month = 12;
+            select_year = select_year-1;
+        } else {
+            select_month = select_month-1;
+        }
+
+        console.log(select_month)
+
+        render_calendar(select_year, select_month)
     })
 
     // next
     $next_btn.click(function(){
         $(".month_day").remove();
-        date = new Date(date.getFullYear, date.getMonth()+1, date.getDate());
-        render_calendar();
+
+        let select_year = year;
+        let select_month = month + 1;
+        let btnEvent = function(yy, mm){
+            
+        };
+
+        if(select_month > 12){
+            select_month = 1;
+            select_year = select_year-1;
+        } else {
+            select_month = select_month+1;
+        }
+
+
+        render_calendar(select_year, select_month)
     })
 
     // calendar_content

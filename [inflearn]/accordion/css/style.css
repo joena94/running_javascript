@@ -1,0 +1,44 @@
+html,body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+tbody tr{
+    border: 1px solid red;
+}
+
+.container h3{
+    padding: 3rem 0 1rem 0;
+}
+
+.panel-faq-container{
+    margin-bottom: -16px;
+}
+.panel-faq-title{
+    cursor: pointer;
+}
+.panel-faq-answer{
+    /* 숨기는 방법은 display:none과 height:0 + overflow:hidden 방법이 있음 */
+    /* padding: 15px;
+    display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+#btn-all-close{
+    float: right;
+    margin-bottom: 10px;
+    padding: 10px 25px;
+    background-color: #726996;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+#btn-all-close:hover{
+    background-color: rgb(255, 230, 0);
+    color: #000;
+    transition: all 0.2s;
+}
+.active{
+    display: block;
+    height: 300px;
+}
