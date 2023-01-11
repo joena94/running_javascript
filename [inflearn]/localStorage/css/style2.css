@@ -3,7 +3,7 @@ button{
     float: right;
     width: 300px;
     padding: 10px 25px;
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
     color: #000;
     background-color: #00ffff;
     border: none;
@@ -15,4 +15,13 @@ button:hover{
     color: #fff;
     transition: all 0.35s;
     cursor: pointer;
+}
+
+.btn{
+    float: none;
+    width: 150px;
+    margin-bottom: 0;
+    background-color: #000;
+    color: white;
+    
 }
