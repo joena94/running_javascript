@@ -42,8 +42,25 @@ window.onload = () => {
         hTbody.innerHTML = result;
         */
         
-
+        console.log("로컬 스토리지 길이" + localStorage.length)
         
+        let result2 = "";
+
+        for (let i=0; i < localStorage.length; i++){
+            let key = localStorage.key(i) // key만 출력하기
+            console.log(`${key} : ${localStorage.getItem(key)}`);
+
+            // 결과 변수
+            result2 += "<tr>"
+            result2 += "<td class='align-middle' width='30%'>" + key + "</td>"
+            result2 += "<td class='align-middle'>" + localStorage.getItem(key) + "</td>"
+            result2 += "<td> <button class='btnRemove btn'> Remove </button></td>"
+            result2 += "</td>"
+
+            // append
+            $("#htmlTbody").empty()
+            $("#htmlTbody").append(result2)
+        }
     });
 
     
