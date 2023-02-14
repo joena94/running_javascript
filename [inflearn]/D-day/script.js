@@ -33,7 +33,7 @@
         };
 
         
-
+        // JSON 사용
         data.countdown.click(function(){
             diff(_$this);
             
@@ -48,6 +48,7 @@
     };
     
 
+    // JSON 사용
     $(function(){
         $(".remain").Dday({
             "countdown" : $(".countdown")
