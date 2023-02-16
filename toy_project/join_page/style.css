@@ -36,12 +36,26 @@ html, body {
   font-size: 18px;
   text-align: left;
 }
-.container .frame .nav ul li a {
+.container .frame .nav ul li .signOn {
   padding-bottom: 10px;
   color: #fff;
-  border-bottom: solid 2px #1059FF;
+  font-weight: bold;
+  border-bottom: solid 3px #1059FF;
   text-transform: uppercase;
   text-decoration: none;
+}
+.container .frame .nav ul li a {
+  padding-bottom: 10px;
+  color: #d1d1d1;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.container .frame .nav ul .signin-unActive {
+  display: inline;
+  padding-left: 10px;
+  font-size: 18px;
+  text-align: left;
 }
 .container .article .form-signin {
   width: 360px;
@@ -83,11 +97,15 @@ html, body {
   background-color: rgb(16, 89, 255);
   text-align: center;
 }
-.container .article .form-signin .btn-animate .btn-signin {
+.container .article .form-signin .btn-animate a {
+  padding: 13px 150px;
   color: #fff;
   font-size: 13px;
   font-weight: bold;
   text-decoration: none;
+}
+.container .displayNone {
+  display: none;
 }
 .container .forgot {
   height: 100px;

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script> 
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -13,26 +14,39 @@
         <div class="frame">
             <div class="nav">
                 <ul class="link">
-                    <li class="signin-active"><a href="btn">SIGN IN</a></li>
-                    <li class="signup-active"><a href="btn">SIGN UP</a></li>
+                    <li><a id="signUp" class="signOn" href="#">SIGN UP</a></li>
+                    <li><a id="signIn" href="#">SIGN IN</a></li>
                 </ul>
             </div>
-            <div class="article">
+            <!-- 회원가입 -->
+            <div id="upBox" class="article">
                 <form class="form-signin" action="" method="">
-                    <label for="username">USER NAME</label>
-                    <input id="LOGIN-ID" class="form-styling" type="text" name="username" placeholder="전화번호, 사용자 이름 또는 이메일">
-                    <label for="password">PASSWORD</label>
-                    <input id="LOGIN-PW" class="form-styling" type="text" name="password" placeholder="비밀번호">
-                    <div class="btn-animate">
-                        <a class="btn-signin" href="">SIGN IN</a>
+                    <label for="username">[Join] USER NAME</label>
+                    <input id="joinId" class="form-styling" type="text" name="username" placeholder="전화번호, 사용자 이름 또는 이메일" autocomplete="off">
+                    <label for="password">[Join] PASSWORD</label>
+                    <input id="joinPw" class="form-styling" type="password" name="password" placeholder="비밀번호">
+                    <div id="btnUp" class="btn-animate" >
+                        <a class="btnSignUp" href="#">SIGN UP</a>
                     </div>
                 </form>
             </div>
-            <div class="forgot">
-                <a href="">Forgot your password?</a>
+            <!-- 로그인 -->
+            <div id="inBox" class="article displayNone">
+                <form class="form-signin" action="" method="">
+                    <label for="username">USER NAME</label>
+                    <input id="logInId" class="form-styling" type="text" name="username" placeholder="전화번호, 사용자 이름 또는 이메일" value="">
+                    <label for="password">PASSWORD</label>
+                    <input id="logInPw" class="form-styling" type="password" name="password" placeholder="비밀번호" value="">
+                    <div id="signIn" class="btn-animate" >
+                        <a class="btnLogIn" href="#">LOG IN</a>
+                    </div>
+                </form>
+                <div class="forgot">
+                    <a href="">Forgot your password?</a>
+                </div>
             </div>
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+
 </html>
