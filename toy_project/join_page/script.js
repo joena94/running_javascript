@@ -55,7 +55,6 @@ $(document).ready(function () {
         //         console.log("❌")
         //     }
         // }
-        
     }
 
     $(".btnLogIn").click(function(){
