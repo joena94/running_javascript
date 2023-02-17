@@ -1,0 +1,40 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{
+    background-color: #000;
+}
+.container{
+    width: 100vw;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #000;
+    overflow: hidden;
+    .containerItem{
+        transition: ease-in-out .5s;
+        ul{
+            width: 400vw;
+            li{
+                float: left;
+                list-style: none;
+                img{
+                    width: 100vw;
+                    
+                }
+                
+            }
+        }
+    }
+    .bottomBtn{
+        position: fixed;
+        button{
+            width: 30px;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 0;
+            cursor: pointer;
+        }
+        .btnOn{
+            background-color: white;
+            width: 60px;
+        }
+    }
+}
