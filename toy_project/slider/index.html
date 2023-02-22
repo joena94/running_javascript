@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
     <title>🛴 Slider</title>
 </head>
@@ -14,21 +14,21 @@
     <div class="container">
         <div class="containerItem">
             <ul>
-                <li class="slideImg"><img src="img/homepod.png" alt=""></li>
-                <li class="slideImg"><img src="img/applewatch.jpg" alt=""></li>
-                <li class="slideImg"><img src="img/appleTv.jpg" alt=""></li>
-                <li class="slideImg"><img src="img/airpod_pro.png" alt=""></li>
+                <li class="slideImg" data-num="1"><img src="img/homepod.png" alt=""></li>
+                <li class="slideImg" data-num="2"><img src="img/applewatch.jpg" alt=""></li>
+                <li class="slideImg" data-num="3"><img src="img/appleTv.jpg" alt=""></li>
+                <li class="slideImg" data-num="4"><img src="img/airpod_pro.png" alt=""></li>
             </ul>
         </div>
         <div class="barBtn">
-            <button class="btn1 btnOn"></button>
-            <button class="btn2"></button>
-            <button class="btn3"></button>
-            <button class="btn4"></button>
+            <button class="btn btnOn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
+            <button class="btn"></button>
         </div>
         <div class="sideBtn">
-            <button class="prev">이전</button>
-            <button class="next">다음</button>
+            <button class="prev"><span class="material-symbols-outlined size-60">arrow_circle_left</span></button>
+            <button class="next"><span class="material-symbols-outlined size-60">arrow_circle_right</span></button>
         </div>
     </div>
 </body>

@@ -3,30 +3,35 @@ body{
     background-color: #000;
 }
 .container{
-    width: 100vw;
+    width: 50vw;
     height: 100%;
     margin: 0 auto;
     background-color: #000;
     overflow: hidden;
     .containerItem{
-        transition: ease-in-out .5s;
         ul{
             width: 400vw;
-            li{
+            margin: 0 auto;
+            .slideImg{
                 float: left;
                 list-style: none;
+                overflow: hidden;
+                transition: 0.5s;
                 img{
-                    width: 100vw;
-                    
+                    width: 50vw;
+
                 }
                 
             }
         }
     }
-    .bottomBtn{
-        position: fixed;
+    .barBtn{
+        display: flex;
+        justify-content: space-between;
+        width: 11vw;
+        margin: 0 auto;
         button{
-            width: 30px;
+            width: 2vw;
             height: 3px;
             background-color: rgba(255, 255, 255, 0.8);
             border: 0;
@@ -34,7 +39,29 @@ body{
         }
         .btnOn{
             background-color: white;
-            width: 60px;
+            width: 4vw;
         }
     }
+    .sideBtn{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        .prev, .next{
+            width: 60px;
+            height: 60px;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+        span.size-60 {
+            font-size: 60px;
+            color: rgba(255, 255, 255, 1);
+            font-variation-settings: 'OPSZ' 40;
+        }
+    }
+}
+
+.pass{
+    transition:ease-in-out .5s;
+    border: 1px solid red;
 }

@@ -9,36 +9,61 @@ body {
 }
 
 .container {
-  width: 100vw;
+  width: 50vw;
   height: 100%;
   margin: 0 auto;
   background-color: #000;
   overflow: hidden;
 }
-.container .containerItem {
-  transition: ease-in-out 0.5s;
-}
 .container .containerItem ul {
   width: 400vw;
+  margin: 0 auto;
 }
-.container .containerItem ul li {
+.container .containerItem ul .slideImg {
   float: left;
   list-style: none;
+  overflow: hidden;
+  transition: 0.5s;
 }
-.container .containerItem ul li img {
-  width: 100vw;
+.container .containerItem ul .slideImg img {
+  width: 50vw;
 }
-.container .bottomBtn {
-  position: fixed;
+.container .barBtn {
+  display: flex;
+  justify-content: space-between;
+  width: 11vw;
+  margin: 0 auto;
 }
-.container .bottomBtn button {
-  width: 30px;
+.container .barBtn button {
+  width: 2vw;
   height: 3px;
   background-color: rgba(255, 255, 255, 0.8);
   border: 0;
   cursor: pointer;
 }
-.container .bottomBtn .btnOn {
+.container .barBtn .btnOn {
   background-color: white;
+  width: 4vw;
+}
+.container .sideBtn {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.container .sideBtn .prev, .container .sideBtn .next {
   width: 60px;
+  height: 60px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.container .sideBtn span.size-60 {
+  font-size: 60px;
+  color: rgb(255, 255, 255);
+  font-variation-settings: "OPSZ" 40;
+}
+
+.pass {
+  transition: ease-in-out 0.5s;
+  border: 1px solid red;
 }/*# sourceMappingURL=style.css.map */
