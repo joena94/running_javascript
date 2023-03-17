@@ -30,8 +30,10 @@
         (function () {
             const characters = document.querySelector('.characters');
 
-            function clickHandler(){
-                console.log(this)
+            function clickHandler(e){
+                // console.log(this); 
+                // console.log(e.currentTarget);    // 둘다 똑같이 객체 
+                console.log(e.target)   // 직접 누른 타겟 설정
             }
 
             characters.addEventListener('click', clickHandler);
