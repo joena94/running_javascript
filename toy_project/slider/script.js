@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     // pagination 만들기
     for(i = 1; i <= _$imgLeng+1; i++){
-        $("<button />").addClass("btn").attr("data-pag-num", i).appendTo($(".barBtn"));
+        $("<button />").addClass("btn").data("pagNum", i).appendTo($(".barBtn"));
     };
         // 첫번째 pagaination은 btnOn class 추가하기
     $(".btn:first-child").addClass("btnOn")
@@ -17,19 +17,16 @@ $(document).ready(function(){
 
     // pagination click event
     function selectBarBtn(){
-        $(".btn").on("click", function(e){
-            e.preventDefault();
+        $(".btn").on("click", function(){
             // 해당 data-pagNum과 data-num이 같으면, data-num 이미지 보여주기
             let now = $(this).data("pagNum");
             let _$getSlideImg = getSlideImg();
-            if(now != $(".slideImg").data("num")){
-                console.log(now, $(".slideImg").data("num"), $(_$getSlideImg[now-1]), $(this));
-                $(_$getSlideImg[now-1]).prependTo($("ul"));
-                $(".btn").removeClass("btnOn")
-                $(this).addClass("btnOn");
-            } else if (){
 
-            };
+            console.log(now, _$getSlideImg.data("num"))
+            
+            $(".btn").removeClass("btnOn");
+            $(this).addClass("btnOn");
+
         })
     }
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tinyping_style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="characters">
+        <div class="tinyping heart">
+            <img src="img/heart.png" alt="">
+        </div>
+        <div class="tinyping ggurae">
+            <img src="img/ggurae.png" alt="">
+        </div>
+        <div class="tinyping nana">
+            <img src="img/nana.png" alt="">
+        </div>
+        <div class="tinyping soljji">
+            <img src="img/soljji.png" alt="">
+        </div>
+    </div>
+
+
+
+<!-- script -->
+    <script>
+        (function () {
+            const characters = document.querySelector('.characters');
+
+            function clickHandler(){
+                console.log(this)
+            }
+
+            characters.addEventListener('click', clickHandler);
+        })(); // 전역변수 사용을 피하기 위해서 사용한 방식
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+.characters {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #dc679b;
+}
+.tinyping {
+    width: 200px;
+    cursor: pointer;
+}
+.characters .tinyping {
+    display: inline-block;
+}
+.special {
+    border: 5px dashed white;
+}
