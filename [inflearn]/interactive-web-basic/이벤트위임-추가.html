@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #eee;
+        height:60vh;
+        }
+    .menu-btn {
+        border: 5px solid white;
+        border-radius: 20px;
+        outline: 0;
+        font: 900 1.2rem NotoSans;
+        background: linear-gradient(0deg, rgba(233,210,0,1) 0%, rgba(255, 240, 0, 1) 24%, rgba(255,240,0,1) 70%,
+        rgba(255,255,255,1) 100%);
+        box-shadow: rgba(255,255,255,1) 0 1px 0;
+        margin: 10px;
+        }
+    .btn-label {
+        text-shadow: rgba(255, 255, 255, 1) 0 1px 0;
+        /* pointer-events: none; 포인터 이벤트(클릭, 드래그, 호버 등)을 비활성화 함 */
+    }
+    .icon{
+        width: 100px;
+    }
+</style>
+<body>
+    <div class="menu">
+        <!-- <button class="menu-btn" data-value="1">
+            <img src="img/heart.png" alt="" class="icon">
+            <span class="btn-label">하츄핑</span>
+        </button>
+        <button class="menu-btn" data-value="2">
+            <img src="img/nana.png" alt="" class="icon">
+            <span class="btn-label">나나핑</span>
+        </button>
+        <button class="menu-btn" data-value="3">
+            <img src="img/ggurae.png" alt="" class="icon">
+            <span class="btn-label">꾸래핑</span>
+        </button> -->
+    </div>
+
+    <script>
+        const menu = document.querySelector(".menu");
+
+        function eventHandler(e){
+            // console.log(e.target.getAttribute("data-value"))
+            let elem = e.target;
+            
+            while(!elem.classList.contains("menu-btn")){
+                elem = elem.parentNode;
+
+                if(elem.nodeName == "BODY"){
+                    elem = null;
+                    return;
+                }
+            }
+
+            console.log(elem.dataset.value);
+        }
+
+        menu.addEventListener("click", eventHandler);
+
+        window.addEventListener("click", () => {
+            const htmlStr = `
+                <button class="menu-btn" data-value="1">
+                    <img src="img/heart.png" alt="" class="icon">
+                    <span class="btn-label">하츄핑</span>
+                </button>
+                <button class="menu-btn" data-value="2">
+                    <img src="img/nana.png" alt="" class="icon">
+                    <span class="btn-label">나나핑</span>
+                </button>
+                <button class="menu-btn" data-value="3">
+                    <img src="img/ggurae.png" alt="" class="icon">
+                    <span class="btn-label">꾸래핑</span>
+                </button>
+            `;
+
+            menu.innerHTML = htmlStr;
+
+        })
+    </script>
+</body>
+</html>

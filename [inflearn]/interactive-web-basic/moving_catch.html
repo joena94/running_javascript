@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/moving_catch_style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="stage">
+        <div class="tinyping heart"></div>
+        <div class="tinyping nana"></div>
+        <div class="tinyping ggurae"></div>
+    </div>
+<!--
+    <script>
+        (function(){
+            // jQuery로 할 경우 간편함
+            // $(".tinyping").click 이런식으로 하면 간단하게 해당 클래스 이벤트를 잡아줌
+            // 그러나 일반 dom script인 javascript는 그딴거 없음😅
+            const tinypingGroup = document.querySelectorAll(".tinyping");
+            const stage = document.querySelector(".stage");
+
+            function clickHandler(){
+                // 클릭한 애를 잡는 법
+                // this를 쓰거나 e.currentTarget을 쓰거나
+                // console.log(this);
+                //console.log(e.currentTarget);
+
+                // 방법은 두가지
+                // 자식 선택자를 날리는(?)거니까, 부모를 변수에 담거나, parentNode를 선택하는 것
+                // stage.removeChild(this);
+                this.parentNode.removeChild(this)
+            }
+
+            for(let i = 0; i < tinypingGroup.length; i++){ // for문에서 i에게 const를 안쓰고 let을 쓰는 이유는 i의 값은 변하니까!
+                tinypingGroup[i].addEventListener('click', clickHandler)
+            } 
+        })();
+    </script>
+-->
+    <script>
+        // 그러나 for문의 반복횟수가 어마어마하다고 생각하면 메모리를 많이 잡아먹음.
+        // 그래서 👉🏻이벤트 위임👈🏻(부모 선택자에 이벤트 넣는다는 의미)을 사용해보자
+        const stage = document.querySelector(".stage");
+        function clickHandler(e){
+            //여기서 this는 stage임
+            // console.log(e.currentTarget); // 얘도 stage
+
+            //예외처리하기
+            if(e.target.classList.contains("tinyping")){
+                stage.removeChild(e.target) // stage를 누르면 error. why? e.target이 stage니까
+            }
+            
+        };
+        stage.addEventListener("click", clickHandler)
+    </script>
+</body>
+</html>

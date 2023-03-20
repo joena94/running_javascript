@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <title>Document</title>
+</head>
+<style>
+    .stage{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: #333;
+    }
+    .door{
+        position: relative;
+        width: 100px;
+        height: 150px;
+
+    }
+    .door-back{
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+    .tinyping{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: contain;
+        transform: translate3d(100%, 0, 0);
+        transition: 0.5s 0.5s; /* duration, delay */
+    }
+    .door:nth-child(1) .tinyping{background-image: url("img/heart.png");}
+    .door:nth-child(2) .tinyping{background-image: url("img/nana.png");}
+    .door:nth-child(3) .tinyping{background-image: url("img/ggurae.png");}
+    .door-body{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        transition: 0.5s;
+    }
+    .door:nth-child(1) .door-body{background: rgba(255, 0, 0, 0.7);}
+    .door:nth-child(2) .door-body{background: rgba(0, 255, 0, 0.7);}
+    .door:nth-child(3) .door-body{background: rgba(0, 0, 255, 0.7);}
+    .door-opened .door-body{
+        transform: perspective(800px) rotateY(-110deg);
+        transform-origin: left;
+    }
+    .door-opened .tinyping{
+        transform: translate3d(0, 0, 0);
+    }
+</style>
+<body>
+    <div class="stage">
+        <div class="door">
+            <div class="door-back">
+                <div class="tinyping"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="tinyping"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+        <div class="door">
+            <div class="door-back">
+                <div class="tinyping"></div>
+            </div>
+            <div class="door-body"></div>
+        </div>
+    </div>
+    <script>
+        (function(){
+            const stageElem = document.querySelector(".stage");
+            let currentItem;    // 현재 활성화 된 아이템을 저장
+
+            function activate(elem){
+                elem.classList.add('door-opened')
+                currentItem = elem;
+            };
+
+            function inactivate(elem){
+                elem.classList.remove("door-opened")
+            };
+
+            function doorHandler(e){
+                const targetElem = e.target;
+
+                if(currentItem){
+                    inactivate(currentItem);
+                }
+                
+                if(targetElem.classList.contains('door-boody')){
+                    activate(targetElem.parentNode);
+                }
+            }
+
+            // 이거 외우기
+            // function doorHandler(e){
+            //     const targetElem = e.target;
+
+            //     if(currentItem){
+            //         currentItem.classList.remove("door-opened")
+            //     }
+
+            //     //예외 처리
+            //     if(targetElem.classList.contains('door-body')){
+            //         targetElem.parentNode.classList.add('door-opened')
+            //         currentItem = targetElem.parentNode;    // 얘가 도어
+            //     }                
+            // };
+
+            stageElem.addEventListener("click", doorHandler);
+        })();
+    </script>
+</body>
+</html>

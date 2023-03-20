@@ -1,0 +1,43 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+.stage{
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 75vw; /*꼭 height라고 해서 vh를 쓸 필요는 없음. 단순 기준일 뿐이다.*/
+    background: #dc679b;
+}
+@keyframes moving{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(90vw);
+    }
+}
+.tinyping{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    animation: moving infinite alternate;
+}
+.tinyping.heart{
+    left: 5%;
+    bottom: 5%;
+    background-image: url("../img/heart.png");
+    animation-duration: 2s;
+}
+.tinyping.nana{
+    left: 10%;
+    bottom: 3%;
+    background-image: url("../img/nana.png");
+    animation-duration: 3s;
+}
+.tinyping.ggurae{
+    left: 7%;
+    bottom: 10%;
+    background-image: url("../img/ggurae.png");
+    animation-duration: 4s;
+}
