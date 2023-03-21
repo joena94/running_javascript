@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/scroll.css">
     <title>Document</title>
@@ -11,16 +12,51 @@
 <body>
     <section class="output">output</section>
     <section class="content">
-        <h1>Airpod Pro</h1>
-        <h2>완전히 새로운</h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem unde eos eaque aspernatur nihil quo, consequatur accusantium sit sequi, sed facere! Totam corrupti delectus, adipisci quam quidem libero dolorem alias?
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, delectus asperiores. Nemo quod in natus repudiandae. Deserunt sunt corrupti quasi impedit ipsa dolorem repudiandae assumenda eius et dolor, illo quis.
-        Similique repellendus iusto quasi alias esse nemo, pariatur recusandae saepe quas, reprehenderit illum fugit placeat tempore illo accusamus quod dolorem officia omnis sit, qui inventore cumque. Vero sint iure enim!
-        <span class="scroll_bold">Aut corporis maiores id esse illum veniam saepe aperiam aspernatur autem tempora, illo officiis maxime dolore ab minus quis. Commodi officiis optio doloremque, voluptas labore quo molestias a quaerat illum!</span>
+        <div class="airpodTitle">
+            <h2>완전히 새로운</h2>
+            <h1>Airpod Pro</h1>
+        </div>
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem unde eos eaque aspernatur nihil quo, consequatur accusantium sit sequi, sed facere! Totam corrupti delectus, adipisci quam quidem libero dolorem alias?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, delectus asperiores. Nemo quod in natus repudiandae. Deserunt sunt corrupti quasi impedit ipsa dolorem repudiandae assumenda eius et dolor, illo quis.
+            Similique repellendus iusto quasi alias esse nemo, pariatur recusandae saepe quas, reprehenderit illum fugit placeat tempore illo accusamus quod dolorem officia omnis sit, qui inventore cumque. Vero sint iure enim!
+            <span class="scroll_bold">Aut corporis maiores id esse illum veniam saepe aperiam aspernatur autem tempora, illo officiis maxime dolore ab minus quis. Commodi officiis optio doloremque, voluptas labore quo molestias a quaerat illum!</span>
+        </p>
         <figure class="airpod">
             <img src="img/airpod_pro.png" alt="">
         </figure>
     </section>
+    <script>
+        (function() {
+            const outputElem = document.querySelector(".output");
+            const airpodElem = document.querySelector(".airpod");            
+
+            function showValue(){
+                let positionY = airpodElem.getBoundingClientRect().top; 
+                outputElem.innerHTML = positionY;
+
+                if(positionY < window.innerHeight * 0.2){
+                    airpodElem.classList.add("zoom")
+                } else {
+                    airpodElem.classList.remove("zoom")
+                }
+                
+
+                // outputElem.innerHTML = window.scrollY; // window 전역객체가 가진 속성임
+
+                //offsetTop은 처음 위치의 값만 가져옴.
+                // outputElem.innerHTML = airpodElem.offsetTop;
+
+                // getBoundingClientRect라는 매서드 가져옴(객체의 속성 중 값이 함수인 애)
+                // 얘를 호출해주면 어떠한 객체를 리턴함.
+                // outputElem.innerHTML = airpodElem.getBoundingClientRect().top; 
+            }
+
+            window.addEventListener("scroll", function(){
+                showValue();
+            }); // 이벤트 버블링 해주는 false는 생략
+        })();
+    </script>
 </body>
 
 </html>
