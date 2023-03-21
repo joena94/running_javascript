@@ -12,20 +12,23 @@
     <script>
         // 생성자(constructor) 함수 만들기
         // ECMA16에서는 class가 나옴. 그래도 예전버전이지만 잘 알아두기🙄
-        function Person(){
-
+        function Person(nickname, age){
+            this.nickname = nickname;
+            this.age = age;
         };
 
-        const person = {
-            nickname : "일분이",
-            age : 10,
-            introduce : function(){
-                console.log(
-                    `안녕하세요? 저는 ${this.nickname}이고 나이는 ${this.age}살이에요.`
-                )
-            }
+        // 함수 하나에 쌍으로 딱 하나. 개별 인스턴스들이 공유하는 거임. 메모리상 🐶이득
+        Person.prototype.introduce = function(){
+            console.log(
+                `안녕하세요? 저는 ${this.nickname}이고 나이는 ${this.age}살이에요.`
+            )
         }
         
+        const person1 = new Person('일분이', 10);
+        const person2 = new Person('이분이', 20);
+        
+        person1.introduce(); // person 1과 person 2는 인스턴스
+        person2.introduce();
     </script>
 </body>
 </html>
