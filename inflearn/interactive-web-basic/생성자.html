@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object</h1>
+
+    <script>
+        // 생성자(constructor) 함수 만들기
+        // ECMA16에서는 class가 나옴. 그래도 예전버전이지만 잘 알아두기🙄
+        function Person(){
+
+        };
+
+        const person = {
+            nickname : "일분이",
+            age : 10,
+            introduce : function(){
+                console.log(
+                    `안녕하세요? 저는 ${this.nickname}이고 나이는 ${this.age}살이에요.`
+                )
+            }
+        }
+        
+    </script>
+</body>
+</html>

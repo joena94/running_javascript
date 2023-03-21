@@ -89,46 +89,51 @@
     </div>
     <script>
         (function(){
-            const stageElem = document.querySelector(".stage");
-            let currentItem;    // 현재 활성화 된 아이템을 저장
+            const stage = document.querySelector(".stage");
+            let currentItem; // 현재 열린 애 잡기
 
             function activate(elem){
-                elem.classList.add('door-opened')
-                currentItem = elem;
-            };
-
+                elem.classList.add("door-opened");
+                currentItem = elem; // A가 열려있고, B를 누를때, A를 다시 닫기 currentItem에 열린 상태 값을 갱신해줘야함.
+            }
+            
             function inactivate(elem){
-                elem.classList.remove("door-opened")
-            };
+                elem.classList.remove("door-opened");
+            }
 
+            // 리팩토링
             function doorHandler(e){
                 const targetElem = e.target;
 
                 if(currentItem){
-                    inactivate(currentItem);
+                    inactivate(currentItem)
                 }
-                
-                if(targetElem.classList.contains('door-boody')){
-                    activate(targetElem.parentNode);
-                }
+                if(targetElem.classList.contains("door-body")){
+                    activate(targetElem.parentNode);    
+                } // else if 쓰지 말기
             }
+            stage.addEventListener("click", doorHandler)
 
-            // 이거 외우기
+
+
             // function doorHandler(e){
-            //     const targetElem = e.target;
+            //     const targetElem = e.target
+            //     const currentItem = document.querySelector(".door-opened")
 
-            //     if(currentItem){
+            //     // 닫아주기
+            //     if(currentItem){ // currentItem 값이 있으면
             //         currentItem.classList.remove("door-opened")
+            //         console.log(currentItem)
             //     }
-
-            //     //예외 처리
-            //     if(targetElem.classList.contains('door-body')){
-            //         targetElem.parentNode.classList.add('door-opened')
-            //         currentItem = targetElem.parentNode;    // 얘가 도어
-            //     }                
-            // };
-
-            stageElem.addEventListener("click", doorHandler);
+                
+            //     // 예외처리
+            //     if(targetElem.classList.contains("door-body")){
+            //         targetElem.parentNode.classList.add("door-opened")
+            //     } else if (currentItem){ // 닫아주기, currentItem 값이 있으면
+            //         currentItem.classList.remove("door-opened")
+            //         console.log(currentItem)
+            //     }
+            // }
         })();
     </script>
 </body>
