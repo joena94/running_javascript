@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .btn{
+        font-size: 2rem;
+    }
+</style>
+<body>
+    <button class="btn">취소</button>
+    <script>
+        let timeId;
+        let n = 0;
+        const btn = document.querySelector(".btn")
+        
+        function sample () {
+            n++;
+            console.log(n)
+            if (n > 200){
+                return; // 조건을 걸어서 종료하는 방법, 리턴하면 종료
+            }
+
+            timeId = requestAnimationFrame(sample); // 실행 구문
+        }
+
+        // 만약 이렇게 쓴다면 딱 한번만 반복됨. setTimeout과 비슷
+        //requestAnimationFrame(sample);
+
+        sample();
+
+        // setTimeout은 첫번째 파라미터로 function, 두번째는 초가 들어감
+        // 내가 원하는 만큼 지연시킬때 사용, 아니면 비동기 테스트 할때, 아니면 의도적으로 다음 턴에 실행시킬때, 딱 1번만 실행됨
+        // 리턴하는 값이 숫자로 있음. 이게 보통 반복이 되면 1씩 늘어남.
+        // 이걸 이용행 setTImeout을 취소 할 수 있음 -> clearTimeout
+        // timeId = setTimeout(sample, 3000) 
+
+        // setInterval은 계속해서 반복하는애, 설정되는 초마다 반복함
+        // 얘도 clear 가능
+        // 단점이 좀 존재함. 이걸 개선한게 requestAnimationFrame
+        // timeId = setInterval(sample, 1000/60) 
+
+        // requestAnimationFrame IE10 부터 지원
+        // requestAnimationFrame에서는 다음 콜백을 실행하려면 반드시 콜백 함수 내에서 requestAnimationFrame을 재호출
+        // setInterval으로 구현한 애니메이션은 약간의 프레임 끊김이 발생하거나 프레임 자체를 빠뜨리는 문제가 발생
+        // 사용 방법은 반복시킬 함수 안에 씀
+
+        // btn.addEventListener("click", function(){
+        //     // setTimeout 리턴한 값을 넣어주면 settimeout을 취소함.
+        //     clearTimeout(timeId);
+        // })
+
+        btn.addEventListener("click", function(){
+            // setTimeout, setInterval 리턴한 값을 넣어주면 settimeout을 취소함.
+            cancelAnimationFrame(timeId);
+        })
+        
+    </script>
+</body>
+</html>

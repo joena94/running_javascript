@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .ball{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        /* margin: -15px 0 0 -15px; */
+        border-radius: 50%;
+        background: red;
+        transition: 1s;
+    }
+    .ball.end{
+        background-color: dodgerblue;
+    }
+</style>
+<body>
+    <div class="ball"></div>
+    <script>
+        const ballElem = document.querySelector(".ball")
+
+        window.addEventListener("click", function(e){
+            //console.log(e.clientX, e.clientY) // 클릭한 위치가 찍힘
+
+            // 내가 클릭한 위치에 맞춰 볼이 따라오기🙄
+            // 그런데 완벽하게 맞지는 않는다. 1. ball의 position이 absolute가 아님. 2. body의 마진 영향이 있어 리셋해줘야함.
+            ballElem.style.transform = `translate(${e.clientX - 15}px, ${e.clientY - 15}px)` 
+        })
+
+        // ballElem.addEventListener("transitionend", function(e){ // transition이 끝날때 발생하는 이벤트
+        //     ballElem.classList.add("end");
+        //     console.log(e.elapsedTime); // elapsedTime은 경과한 시간이 나옴. transition-duration의 값과 같음
+        //     console.log(e.propertyName); // 속성을 알려줌
+        // }) 
+            
+        ballElem.addEventListener("transitionstart", function(e){ // transition이 끝날때 발생하는 이벤트
+            ballElem.classList.add("end");
+            console.log(e.elapsedTime); // elapsedTime은 경과한 시간이 나옴. transition-duration의 값과 같음
+            console.log(e.propertyName); // 속성을 알려줌
+        }) 
+    </script>
+</body>
+</html>

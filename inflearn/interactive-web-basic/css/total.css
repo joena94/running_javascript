@@ -1,0 +1,57 @@
+body {
+    height: 500vw;
+    font-family: 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', NanumGothic, 'Malgun Gothic', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    color: #555;
+    background: #fff000;
+}
+
+/* world */
+.world{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px; /* 원근 적용 */
+}
+.stage{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style:preserve-3d; /* 자식까지 제대로 3D style을 보존하기 위해 쓰는 속성 (IE 지원 안함, 웹킷 써야함) */   
+}
+.house{
+    width: 100vw;
+    height: 100vh;
+    transform: translateZ(-490vw);
+    transform-style: preserve-3d;
+}
+.wall{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+}
+.wall.wall-left{
+    left: -500vw;
+    width: 1000vw;
+    transform: rotateY(90deg);
+}
+.wall.wall-right{
+    width: 1000vw;
+    transform: rotateY(90deg);
+}
+.wall-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.wall-title{
+    font-size: 5rem;
+}

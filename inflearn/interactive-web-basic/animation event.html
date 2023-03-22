@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @keyframes ball-ani{
+        from{ /*생략 가능*/
+            transform: translate(0, 0);
+        }
+        to{
+            transform: translate(200px, 200px);
+        }
+    }
+    .ball{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        /* margin: -15px 0 0 -15px; */
+        border-radius: 50%;
+        background: red;
+        transition: 1s;
+        /*animation: ball-ani 1s 3 alternate forwards;*/ /* animation shorthand 순서 : animation 이름, duration, 반복횟수, 방향속성, 종료속성 */
+    }
+    .ball.end{
+        border: 5px solid dodgerblue;
+    }
+</style>
+<body>
+    <div class="ball"></div>
+    <script>
+        const ballElem = document.querySelector(".ball");
+
+        ballElem.addEventListener("click", function(){
+            ballElem.style.animation = "ball-ani 1s 3 alternate forwards";
+        })
+
+        ballElem.addEventListener("animationend", function(){
+            ballElem.classList.add("end")
+        })
+
+        ballElem.addEventListener("animationiteration", function(){ //iteration이라는 속성이 반복이 될 때 일어나는 이벤트라 처음에는 안일어나고, 그 이후 턴에 카운트 되어짐
+        // 즉 반복 시점에 이벤트를 잡아 낼 수 있당.
+            console.log("반복");
+        })
+    </script>
+</body>
+</html>
