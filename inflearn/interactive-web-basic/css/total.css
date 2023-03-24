@@ -6,6 +6,23 @@ body {
     background: #fff000;
 }
 
+/* progress-bar */
+.progress-bar-con{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 5px;
+    background-color: #555;
+    z-index: 100;
+}
+.progress-bar{
+    width: 0;
+    height: 100%;
+    background-color: #00a8ff;
+}
+
+
 /* world */
 .world{
     position: fixed;
@@ -38,14 +55,20 @@ body {
     background: rgba(255, 255, 255, 0.8);
 }
 .wall.wall-left{
-    left: -500vw;
     width: 1000vw;
-    transform: rotateY(90deg);
+    background: #f8f8f8;
+    transform: rotateY(90deg) translateZ(-500vw);
 }
 .wall.wall-right{
+    left: -500vw;
     width: 1000vw;
-    transform: rotateY(90deg);
+    background: #f8f8f8;
+    transform: rotateY(90deg) translateZ(100vw);
 }
+.wall-front-a{transform: translateZ(300vw);}
+.wall-front-b{transform: translateZ(50vw);}
+.wall-front-c{transform: translateZ(-200vw);}
+.wall-front-d{transform: translateZ(-500vw);}
 .wall-content{
     display: flex;
     align-items: center;
