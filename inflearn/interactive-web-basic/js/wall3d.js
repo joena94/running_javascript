@@ -45,5 +45,17 @@
     // 리사이즈 될떄마다 리사이즈 핸들러 발생.
     // maxScrollValue 갱신됨
     window.addEventListener("resize", resizeHandler);
+
+    stageElem.addEventListener("click", function(e){
+        new Character({     // 생성자 함수 실행
+            xPos: e.clientX / window.innerWidth * 100   // 매개변수가 한개(객체)인 생성자 함수. 우리가 필요한 옵션들은 이 객체의 속성에 계속 추가할거임.
+        });    
+
+        //console.log(e.clientX)    // 내가 클릭한 위치
+        //console.log(e.clientX / window.innerWidth * 100)    // 내가 클릭한 위치를 1~100%로 표현하기
+    });
+
     resizeHandler();
+    
+
 })();
