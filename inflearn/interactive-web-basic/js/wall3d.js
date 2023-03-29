@@ -5,6 +5,7 @@
     const houseElem = document.querySelector(".house");
     const stageElem = document.querySelector(".stage");
     const barElem = document.querySelector(".progress-bar");
+    const selectCharacterElem = document.querySelector(".select-character");
     const mousePos = {x: 0, y: 0};
     // body.offsetHeight = body 전체의 높이
     // window.innerHeight = 윈도우 현재 창의 높이
@@ -48,11 +49,16 @@
 
     stageElem.addEventListener("click", function(e){
         new Character({     // 생성자 함수 실행
-            xPos: e.clientX / window.innerWidth * 100   // 매개변수가 한개(객체)인 생성자 함수. 우리가 필요한 옵션들은 이 객체의 속성에 계속 추가할거임.
-        });    
-
+            xPos: e.clientX / window.innerWidth * 100,   // 매개변수가 한개(객체)인 생성자 함수. 우리가 필요한 옵션들은 이 객체의 속성에 계속 추가할거임.
+            speed: Math.random()
+        });  
         //console.log(e.clientX)    // 내가 클릭한 위치
         //console.log(e.clientX / window.innerWidth * 100)    // 내가 클릭한 위치를 1~100%로 표현하기
+    });
+
+    selectCharacterElem.addEventListener("click", function (e){
+        const value = e.target.getAttribute("data-char");
+        document.body.setAttribute("data-char", value);
     });
 
     resizeHandler();
