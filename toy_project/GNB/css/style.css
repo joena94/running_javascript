@@ -16,6 +16,16 @@ header{
     background-color: #fff;
     color:#242427;
 }
+header.active::after{
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+    z-index: -1;
+}
 .global{
     height: 4rem;
     background-color: #fff;
@@ -110,35 +120,65 @@ header{
 .gnb > .gnb_top {
     overflow: hidden;
     float: right;
+    width: calc(100% - 29.5rem - 3rem);
 }
 .gnb > .gnb_top > li{
+    overflow: hidden;
     float: left;
+    display: block;
+    width: calc(100% / 4);
+    height: 100%;
 }
 .gnb > .gnb_top > li > a{
-    display: inline-block;
-    width: 23rem;
-    padding: 4rem 0;
+    display: block;
+    padding: 3.7rem 0;
     font-size: 2rem;
     color: #242427;
     text-align: center;
     text-decoration: none;
 }
 /* depth1 작업 */
+.gnb_top > .depth1{
+    width: calc(100%/4);
+    height: 100%;
+}
 .gnb_top > .depth1 > a > span{
     position: relative;
 }
 .gnb_top > .depth1 > a::before{
     content: "";
-    display: none;
+    display: block;
     position: relative;
-    top: 5.5rem;
+    top: 5.8rem;
+    width: 0%;
+    height: 6px;
+    background-color: #1f3faa;
+    transition: .5s;
+}
+.gnb_top > .depth1 > a.on::before{
+    content: "";
+    display: block;
+    position: relative;
+    top: 5.8rem;
     width: 100%;
     height: 6px;
-    background-color: #476CCD;;
+    background-color: #476CCD;
 }
 .gnb_top > .depth1 > a > span::after{
     content: "";
-    display: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -1rem;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background-color: #ef4881;
+    transition: all .2s;
+}
+.gnb_top > .depth1 > a.on > span::after{
+    content: "";
+    display: block;
     position: absolute;
     top: 0;
     right: -1rem;
@@ -147,14 +187,23 @@ header{
     border-radius: 50%;
     background-color: #ef4881;
 }
-.gnb_top > .depth1 > ul{
-    border-left: 1px solid #e6e6ea;
-}
 /* depth2 작업 */
 .depth2{
-    /* display: none; */
+    display: block;
     height: 51.2rem;
-    padding: 1rem 0;
+    /* height: 0;     */
+    border-left: 1px solid #e6e6ea;
+    transition: all .5s;
+}
+.depth2.active{
+    height: 51.2rem;
+    padding:1rem 0;
+}
+.depth2.on{
+    background-color: #1f3faa;
+}
+.depth2.on > li > a{
+    color: white;
 }
 .depth2 > li > a{
     display: block;
@@ -174,4 +223,7 @@ header{
     padding: 0.5rem 0 0.5rem 1rem;
     color: #909094;
     font-size: 1.4rem;
+}
+.depth2.on > .depth3 > li > a{
+    color: #bcc6e6;
 }
