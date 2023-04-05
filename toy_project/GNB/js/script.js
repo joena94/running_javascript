@@ -1,31 +1,19 @@
 $(function(){
     (function(){
-        // _$depth1Title = $(".depth1");
-        // _$depth1Title = $(".gnb > .gnb_top > li");
-        
-        // _$depth1Title.mouseenter(function(e){            
-        //     e.preventDefault();
-        //     $("header").addClass("active");     // 백그라운드 
-        //     $(".depth2").addClass("active");    // depth 오픈
+        let _$header = $("header")
 
-        //     $(e.target).addClass("on");         // top Nav 가상선택자 효과
-        //     $(e.target).next().addClass("on")   // depth 오픈
+        console.log(_$header.scrollTop())
 
-        //     console.log(e.target)
-        // })
-        // _$depth1Title.mouseleave(function(e){
-        //     e.preventDefault();
-        //     $("header").removeClass("active")
-        //     $(".depth2").removeClass("active")
-
-        //     $(e.target).removeClass("on")
-        //     $(e.target).next().removeClass("on")
-        // })
-        
         $(".gnb > .gnb_top > li").on("focusin mouseenter click", function(e){
+            $(this).find("a").addClass("on");
+            $(this).find(".depth2").addClass("on");
+            $(".depth2").addClass("active");
             $("header").addClass("active");     // 백그라운드 
         });
         $(".gnb > .gnb_top > li").on("mouseleave", function(e){
+            $(this).find("a").removeClass("on");
+            $(this).find(".depth2").removeClass("on");
+            $(".depth2").removeClass("active");
             $("header").removeClass("active");     // 백그라운드 
         });
     })();
