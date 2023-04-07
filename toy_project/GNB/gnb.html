@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>MAKE GNB</title>
 </head>
 <body>
+    <div class="skipNav">
+        <a href="#content">본문으로 바로가기</a>
+        <a href="#gnb">주메뉴으로 바로가기</a>
+    </div>
     <header>
         <div class="global">
-            <div class="global_container">
+            <div class="global_top_container">
                 <div class="global_left">
                     <a class="global_btn" href="#">국가연구자정보시스템</a>
                     <a class="global_btn" href="#">전자평가시스템</a>
@@ -38,11 +43,27 @@
                 <div class="global_container">
                     <div class="gnb">
                         <div class="gnb_logo">
-                            <a href="#" class="gnb_logo_img">
-                                <img src="img/logo.png" alt="로고">
+                            <a href="#" class="gnb_logo_img" >
+                                <span class="sr-only">iris</span>
                             </a>
+                            <button type="button" class="btn_allmenu">
+                                <i class="xi-search xi-2x"></i>
+                            </button>
+                            <button type="button" class="btn_sch_open">
+                                <i class="xi-bars xi-2x"></i>
+                            </button>
                         </div>
-                        <ul class="gnb_top">
+                        <div class="gnb_util">
+                            <form action="#" method="post">
+                                <div class="group_btn">
+                                    <span class="member_link">
+                                        <a href="#" class="btn_login">로그인</a>
+                                        <a href="#" class="btn_join">회원가입</a>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <ul id="gnb" class="gnb_top">
                             <li class="depth1"><a href="#"><span>IRIS 소개</span></a>
                                 <ul class="depth2">
                                     <li><a href="#">사업소개</a>
