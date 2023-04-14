@@ -1,0 +1,484 @@
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0,0,0,0);
+}
+
+#wrap{
+    overflow: hidden;
+}
+
+/* THIS: skipNav 영역 */
+.skipNav{
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    height: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 1000;
+}
+.skipNav a{
+    display: block;
+    width: 100%;
+    line-height: 0;
+    text-align: center;
+}
+.skipNav a:focus, .skipNav a:active{
+    position: absolute;
+    top: 1000px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    background-color: #20262c;
+    color:#fff;
+    font-weight: bold;
+    text-align: center;
+}
+/* THIS: eGoverment 영역 */
+.egLine{
+    width: 100%;
+    height: 40px;
+    background-color: #4f6280;
+}
+.egLine > .egLinein{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.egLine > .egLinein > p{
+    padding: 1.3rem 0 1.3rem 5rem;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background: url("../img/eg_logo.png") no-repeat left center;
+}
+
+/* THIS: NAV TOP (메인로고 라인) */
+.wrap{
+    width: 100%;
+    height: 0;
+}
+.wrap.back::before{
+    position: absolute;
+    box-sizing: border-box;
+    top: 20rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all .2s;
+    content: "";
+}
+.wrap > header{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+header > .top{
+    position: relative;
+    height: 10rem;
+    padding: 2.4rem 0;
+}
+header > .top > h1{
+    float: left;
+}
+header > .top > h1 > .logo{
+    display: block;
+    width: 14rem;
+    height: 5.5rem;
+    background: url("../img/logo.png") no-repeat center center;
+}
+/* THIS: NAV TOP 통합검색 */
+header > .top > .topSearch{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50rem;
+    height: 5.2rem;
+    background: #fff;
+    border: 0.3rem solid #4e69cc;
+    transform: translate(-50%, -50%);
+}
+.topSearch select{
+    padding: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    border: none;
+}
+.topSearch input{
+    width: calc(100% - 17rem);
+    padding: 1rem;
+    border: none;
+    font-size: 1.6rem;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.topSearch fieldset > .navSearBtn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 46px;
+    height: 100%;
+    border: 0;
+    background-color: #4e69cc;
+}
+.topSearch fieldset > .navSearBtn:after{
+    content: "\e97a";
+    color: white;
+    font-size: 2.3rem;
+    font-family: 'xeicon';
+}
+
+/* THIS: NAV TOP 어린이 법제처, 영문홈페이지 */
+header > .top > .topRight{
+    float: right;
+    height: 100%;
+    padding: 0.5rem 0;
+}
+header > .top > .topRight > .nkSym{
+    margin-right: 1rem;
+}
+@media screen and (max-width:1150px) {
+    header > .top > .topRight > .nkSym{
+        display: none;
+    }
+}
+.top > .topRight > .topRightSite1{
+    float: right;
+    height: 100%;
+}
+.top > .topRight > .topRightSite1 > a{
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    padding: 0.9rem 1.2rem;
+    color: #333;
+    font-size: 1.6rem;
+}
+.top > .topRight > .topRightSite1 > a:first-child:after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top:0.8rem;
+    left: 11.5rem;
+    width: 1px;
+    height: 20px;
+    background-color: #d1d1d1;
+}
+.top > .topRight > .mobileSearch, .top > .topRight > .mobileHamburger{
+    display: none;
+    width: 4rem;
+    height: 5rem;
+    padding: 0.9rem 0.5rem;
+    vertical-align: middle;
+}
+
+/* THIS: GNB */
+nav{
+    width: 100%;
+    height: 6rem;
+    background: #f4f4f5;
+    border-top: 1px solid #dfe0e2;
+    border-bottom: 1px solid #dfe0e2;
+}
+nav > .gnbTopmenu{
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+nav > .gnbTopmenu > li{
+    float: left;
+    position: relative;
+    width: 16%;
+}
+nav > .gnbTopmenu > li:after{
+    content: "";
+    position: absolute;
+    top: 2rem;
+    width: 2px;
+    height: 20px;
+    background-color: #e3e3e3;
+}
+nav > .gnbTopmenu > li:first-child:after{
+    display: none;
+}
+nav > .gnbTopmenu > li > a{
+    display: block;
+    padding: 2rem 0;
+    color: #333;
+    font-size: 1.9rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.9;
+    transition: ease-in-out .3s;
+}
+nav > .gnbTopmenu > li > a:hover{
+    color: #4560c2;
+}
+.gnb > .gnbTopmenu > .siteBtn{
+    display: block;
+    position: absolute;
+    padding: 1.4rem;
+    right: 0;
+    width: 6rem;
+    height: 6rem;
+}
+.gnb > .gnbTopmenu > .siteBtn:after{
+    content: "\e91c";
+    color: #333;
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'xeicon';
+}
+
+/* THIS: SUBMENU */
+.submenuWrap{
+    position: relative;
+    width: 1000%;
+    background-color: #fff;
+}
+.submenuWrap::before{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #4560ce;
+    content: "";
+}
+.submenu{
+    display: block;
+    position: relative;
+    width: 1280px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.submenu.on{
+    display: block;
+    position: relative;
+    width: 1280px;
+    background-color: #fff;
+    overflow: hidden;
+
+}
+.submenu > .subTitle{
+    position: absolute;
+    display: block;
+    float: left;
+    width: 24rem;
+    height: 100%;
+    background-color:#4560ce;
+}
+.submenu > .subTitle > .title{
+    position: relative;
+    height: 100%;
+    padding-left: 1rem;
+}
+.submenu > .subTitle > .title > strong{
+    display: block;
+    padding-top: 4rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: white;
+}
+.submenu > .subTitle > .title > span{
+    display: block;
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    color: white;
+}
+.gnbTopmenu > li > .submenu > .subTitle > .title > img{
+    margin: 1rem 0;
+}
+.submenu > .sub1{
+    position: relative;
+    left: 24rem;
+}
+.submenu > .sub1 + .sub1{
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+.submenu > .sub1 > .sub-first{
+    display: table;
+    width: calc(100% - 24rem);
+}
+.submenu > .sub1 > .sub-first > a{
+    display: table-cell;
+    padding: 0 2.5rem;
+    width: 22rem;
+    color: #333;
+    font-size: 1.6rem;
+    vertical-align: middle;
+    background-color: #f4f4f5;
+    transition: all .2s;
+}
+.submenu > .sub1 > .sub-first > a:after{
+    position: absolute;
+    left: 18rem;
+    width: 22px;
+    height: 22px;
+    font-family: "xeicon";
+    content: "\e93f";
+}
+.submenu > .sub1 > .sub-first > a:hover{
+    color: #4560c2;
+    font-weight: 700;
+}
+.submenu > .sub1 > .sub-first > .sub-seconed{
+    display: table-cell;
+    padding: 1rem 0 1rem 0;
+    
+}
+.submenu > .sub1 > .sub-first > .sub-seconed > ul{
+    margin-left: 2rem;
+}
+.submenu > .sub1 > .sub-first > .sub-seconed > ul li{
+    position: relative;
+    display: inline-block;
+    width: 30%;
+}
+
+.submenu > .sub1 > .sub-first > .sub-seconed > ul li a{
+    display: block;
+    color: #666666;
+    padding: 1rem;
+    font-size: 1.6rem;
+}
+.submenu > .sub1 > .sub-first > .sub-seconed > ul li a:hover{
+    color: #043763;
+    font-weight: 700;
+}
+.submenu > .sub1 > .sub-first > .sub-seconed > ul li a::before{
+    position: absolute;
+    top: 1.8rem;
+    left: -0.5rem;
+    width: 8px;
+    height: 2px;
+    background-color: #d0d0d0;
+    content: "";
+}
+.submenu > .sub1 > .sub-first > .sub-seconed > ul li a:hover::before{
+    background-color: #043763;
+}
+@media screen and (max-width:1280px) {
+    .egLine{
+        padding: 0 1rem;
+    }
+    .submenu.on{
+        width:1000px;
+    }
+}
+@media screen and (max-width:1024px) {
+    header > .top{
+        padding: 2.3rem 1rem;
+    }
+    .top > .topSearch{
+        display: none;
+    }
+    .top > .topRight > .nkSym, .top > .topRight > .topRightSite1{
+        display: none;
+    }
+
+    /* //THIS: 모바일 검색,햄버거  */
+    .top > .topRight > .mobileSearch, .top > .topRight > .mobileHamburger{
+        display: inline-block;
+        width: 4rem;
+        height: 5rem;
+        padding: 0.9rem 0.5rem;
+        vertical-align: middle;
+    }
+    .top > .topRight > .mobileSearch::before{
+        color: #333;
+        font-size: 3rem;
+        font-family: "xeicon";
+        content: "\e97a";
+    }
+    .top > .topRight > .mobileHamburger::before{
+        color: #333;
+        font-size: 3rem;
+        font-family: "xeicon";
+        content: "\e91c";
+    }
+    /* // THIS: 모바일 NAV*/
+    nav{
+        background-color: #fff;
+        border: none;
+    }
+    nav > .gnbTopmenu > li{
+        clear: both;
+        width: 100%;
+        background-color: #edeff2;
+        border-bottom: 1px solid #fff;
+    }
+    nav > .gnbTopmenu > li > a {
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.8rem;
+    }
+    .gnb > .gnbTopmenu > .siteBtn:after {
+        display: none;
+    }
+
+    /* // THIS: 모바일 Sub-nav*/
+    .submenuWrap{
+        position: relative;
+        background-color: #fff;
+    }
+    .submenu{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .submenu > .subTitle{
+        display: none;
+    }
+    .submenu > .sub1{
+        left: 0;
+    }
+    .submenu > .sub1 + .sub1{
+        border-top: 1px solid rgba(0,0,0,0.15);
+    }
+    .submenu > .sub1 > .sub-first{
+        width: 100%;
+    }
+    .submenu > .sub1 > .sub-first > a{
+        display: block;
+        padding:1.5rem 1.5rem 1rem 1.5rem;
+        font-weight: 500;
+        color: #222;
+        background-color: #fff;
+    }
+    .submenu > .sub1 > .sub-first > a:after{
+        display: none;
+    }
+    .submenu > .sub1 > .sub-first > .sub-seconed{
+        display: block;
+        width: 100%;
+        padding: 0 0 1rem 0;
+    }
+    .submenu > .sub1 > .sub-first > .sub-seconed > ul{
+        margin-left: 3rem;
+    }
+    .submenu > .sub1 > .sub-first > .sub-seconed > ul li{
+        width: 100%;
+    }
+    .submenu > .sub1 > .sub-first > .sub-seconed > ul li a{
+        padding: 0.8rem;
+    }
+    .submenu > .sub1 > .sub-first > .sub-seconed > ul li a::before{
+        position: absolute;
+        top: 1.8rem;
+        left: -0.7rem;
+        width: 8px;
+        height: 2px;
+        background-color: #d0d0d0;
+        content: "";
+    }
+}
